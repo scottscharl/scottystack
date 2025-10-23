@@ -1,0 +1,11 @@
+# Server
+server/pb_data/
+server/pocketbase
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
