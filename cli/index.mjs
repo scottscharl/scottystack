@@ -16,8 +16,7 @@ const colors = {
   dim: (text) => `\x1b[2m${text}\x1b[0m`,
 };
 
-// TODO: Update this to your GitHub repo
-const TEMPLATE_REPO = 'github:scottscharl/scottystack';
+const TEMPLATE_REPO = 'github:scottscharl/scottystack#master';
 
 function showBanner() {
   console.log(`
