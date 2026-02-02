@@ -3,8 +3,8 @@
 import { downloadTemplate } from 'giget';
 import prompts from 'prompts';
 import { execSync, spawn } from 'child_process';
-import { existsSync } from 'fs';
-import { resolve, basename } from 'path';
+import { existsSync, rmSync } from 'fs';
+import { resolve, basename, join } from 'path';
 
 // Color helpers
 const colors = {
@@ -100,6 +100,12 @@ async function main() {
     console.log(colors.yellow('\nMake sure you have internet access and try again.'));
     console.log(colors.dim(`Template repo: ${TEMPLATE_REPO}`));
     process.exit(1);
+  }
+
+  // Step 3b: Remove CLI folder from user's project (they don't need it)
+  const cliDir = join(targetDir, 'cli');
+  if (existsSync(cliDir)) {
+    rmSync(cliDir, { recursive: true, force: true });
   }
 
   // Step 4: Install root dependencies
