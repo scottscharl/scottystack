@@ -4,27 +4,35 @@ A modern full-stack application with React + Vite frontend and PocketBase backen
 
 ## Quick Start
 
-### Install Dependencies
-
+**Create a new project:**
 ```bash
-cd client
-npm install
+npx create-scottystack my-app
+cd my-app
 ```
+
+**Or clone and setup manually:**
+```bash
+git clone https://github.com/YOURNAME/scottystack my-app
+cd my-app
+npm install
+npm run setup
+```
+
+The setup wizard will ask you to choose a deployment mode:
+
+- **PocketHost** - Use a hosted PocketBase instance at pockethost.io
+- **Self-hosted** - Run PocketBase locally (downloads automatically if needed)
 
 ### Start Development Servers
 
-**Option 1: Start everything at once**
+**Self-hosted mode:**
 ```bash
 ./start-all.sh
 ```
 
-**Option 2: Start separately**
+**PocketHost mode:**
 ```bash
-# Terminal 1 - Start PocketBase
-./start-server.sh
-
-# Terminal 2 - Start React app
-./start-client.sh
+cd client && npm run dev
 ```
 
 ## Access Points

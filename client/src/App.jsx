@@ -4,6 +4,7 @@ import Login from "./routes/Login";
 import Register from "./routes/Register";
 import Home from "./routes/Home";
 import Dashboard from "./routes/Dashboard";
+import NotFound from "./routes/NotFound";
 
 function ProtectedRoute({ children }) {
   const { user } = usePocket();
@@ -17,7 +18,7 @@ function PublicRoute({ children }) {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -44,6 +45,7 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

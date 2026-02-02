@@ -25,29 +25,19 @@ export const PocketProvider = ({ children }) => {
   }, [pb.authStore]);
 
   async function register(email, password) {
-    try {
-      const data = {
-        email,
-        password,
-        passwordConfirm: password,
-      };
+    const data = {
+      email,
+      password,
+      passwordConfirm: password,
+    };
 
-      const newUser = await pb.collection("users").create(data);
-      await pb.collection("users").authWithPassword(email, password);
-      return newUser;
-    } catch (error) {
-      console.error("Registration error:", error);
-      throw error;
-    }
+    const newUser = await pb.collection("users").create(data);
+    await pb.collection("users").authWithPassword(email, password);
+    return newUser;
   }
 
   async function login(email, password) {
-    try {
-      return await pb.collection("users").authWithPassword(email, password);
-    } catch (error) {
-      console.error("Login error:", error);
-      throw error;
-    }
+    return await pb.collection("users").authWithPassword(email, password);
   }
 
   function logout() {
@@ -57,9 +47,9 @@ export const PocketProvider = ({ children }) => {
   async function refreshSession() {
     if (!pb.authStore.isValid) return;
     const decoded = jwtDecode(token);
-    const tokenExpiration = decoded.exp;
-    const expirationWithBuffer = (decoded.exp + fiveMinutesInMs) / 1000;
-    if (tokenExpiration < expirationWithBuffer) {
+    const expirationTime = decoded.exp * 1000; // convert seconds to ms
+    const fiveMinutesBeforeExpiry = expirationTime - fiveMinutesInMs;
+    if (Date.now() >= fiveMinutesBeforeExpiry) {
       await pb.collection("users").authRefresh();
     }
   }

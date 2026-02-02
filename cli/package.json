@@ -1,0 +1,32 @@
+{
+  "name": "create-scottystack",
+  "version": "1.0.0",
+  "description": "Create a new ScottyStack project - React + PocketBase",
+  "type": "module",
+  "bin": {
+    "create-scottystack": "./index.mjs"
+  },
+  "files": [
+    "index.mjs"
+  ],
+  "keywords": [
+    "create",
+    "scaffold",
+    "react",
+    "pocketbase",
+    "vite",
+    "tailwind",
+    "starter",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOURNAME/scottystack"
+  },
+  "dependencies": {
+    "giget": "^1.2.3",
+    "prompts": "^2.4.2"
+  }
+}
