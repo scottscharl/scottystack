@@ -12,7 +12,7 @@ cd my-app
 
 **Or clone and setup manually:**
 ```bash
-git clone https://github.com/YOURNAME/scottystack my-app
+git clone https://github.com/scottscharl/scottystack my-app
 cd my-app
 npm install
 npm run setup

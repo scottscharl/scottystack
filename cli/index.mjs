@@ -17,7 +17,7 @@ const colors = {
 };
 
 // TODO: Update this to your GitHub repo
-const TEMPLATE_REPO = 'github:YOURNAME/scottystack';
+const TEMPLATE_REPO = 'github:scottscharl/scottystack';
 
 function showBanner() {
   console.log(`
