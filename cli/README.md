@@ -41,13 +41,3 @@ npx create-scottystack
 - **Backend**: PocketBase (SQLite + REST API + Realtime)
 - **Auth**: Built-in with PocketBase
 
-## Publishing
-
-To publish your own version:
-
-```bash
-cd cli
-npm publish
-```
-
-Make sure to update `TEMPLATE_REPO` in `index.mjs` to point to your GitHub repo.

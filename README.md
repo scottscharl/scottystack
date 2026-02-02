@@ -1,16 +1,18 @@
-# ScottyStack Project
+# ScottyStack
 
-A modern full-stack application with React + Vite frontend and PocketBase backend.
+Quickly create a modern full-stack application with React + Vite frontend and PocketBase backend.
 
 ## Quick Start
 
 **Create a new project:**
+
 ```bash
 npx create-scottystack my-app
 cd my-app
 ```
 
 **Or clone and setup manually:**
+
 ```bash
 git clone https://github.com/scottscharl/scottystack my-app
 cd my-app
@@ -26,11 +28,13 @@ The setup wizard will ask you to choose a deployment mode:
 ### Start Development Servers
 
 **Self-hosted mode:**
+
 ```bash
 ./start-all.sh
 ```
 
 **PocketHost mode:**
+
 ```bash
 cd client && npm run dev
 ```
@@ -38,7 +42,7 @@ cd client && npm run dev
 ## Access Points
 
 - **React App**: http://localhost:5173
-- **PocketBase Admin**: http://localhost:8090/_/
+- **PocketBase Admin**: http://localhost:8090/\_/
 
 ## Project Structure
 
@@ -81,7 +85,9 @@ cd client && npm run dev
 Environment variables are in `client/.env.local`:
 
 ```
+
 VITE_PB_URL=http://localhost:8090
+
 ```
 
 ## Stack
@@ -89,3 +95,4 @@ VITE_PB_URL=http://localhost:8090
 - **Frontend**: React 18, Vite, Tailwind CSS, React Router, TanStack Query
 - **Backend**: PocketBase (SQLite + REST API + Realtime)
 - **Authentication**: Built-in with PocketBase
+```
